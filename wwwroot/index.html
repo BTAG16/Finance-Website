@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Account Manager</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="Content/Stockportfolio.css" />
+    <style>
+        [ws-template], [ws-children-template], [ws-replace], [ws-hole] {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="Content/Stockporfolio.head.js"></script>
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <ul>
+                <li><a id="linkToMoney" class="linkPage" href="${Balances}">Cash Flow</a></li>
+                <li><a id="linkToStock" class="linkPage" href="${Equities}">Equity Portfolio</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div ws-hole="PageContent"></div>
+
+    <div ws-template="MoneyTracking" class="moneyTracking">
+            <header>
+                <h1>Finance Tracker</h1>
+            </header>
+
+            <div class="add-section">
+                <div class="add-income">
+                    <h2>Income List</h2>
+                    <div class="input-group">
+                        <label for="categoryIncome">Category</label>
+                        <select id="categoryIncome" name="categoryIncome" ws-var="incomegroup">
+                            <option value="Salary">Salary</option>
+                            <option value="Gift">Gift</option>
+                            <option value="Extra Income">Extra income</option>
+                            <option value="Scholarship">Scholarship</option>
+                            <option value="Part-time Job">Part-time Job</option>
+                            <option value="Grants">Grants</option>
+                            <option value="Allowance">Allowance</option>
+                            <option value="Tuition Reimbursement">Tuition Reimbursement</option>
+                            <option value="Financial Aid">Financial Aid</option>
+                            <option value="Internship Stipend">Internship Stipend</option>
+                            <option value="Freelance Work">Freelance Work</option>
+                            <option value="Tutoring">Tutoring</option>
+                            <option value="Research Assistantship">Research Assistantship</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="amountIncome">Amount</label>
+                        <input ws-var="gains" type="number" id="amountIncome" placeholder="0.0">
+                    </div>
+                    <button class="add-button" ws-onclick="gainings" >Add Income</button>
+                </div>
+
+                <div class="add-expense">
+                    <h2>Expenses List</h2>
+                    <div class="input-group">
+                        <label for="categoryExpenses">Category</label>
+                        <select id="categoryExpenses" name="categoryExpenses" ws-var="expensegroup">
+                            <option value="Rent">Rent</option>
+                            <option value="Utilities">Utilities</option>
+                            <option value="Groceries">Groceries</option>
+                            <option value="Textbooks">Textbooks</option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Health Insurance">Health Insurance</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Personal Care">Personal Care</option>
+                            <option value="Internet">Internet</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="amountExpenses">Amount</label>
+                        <input ws-var="losses" type="number" id="amountExpenses" placeholder="0.0">
+                    </div>
+                    <button class="add-button" ws-onclick="losings" >Add Expenses</button>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <div class="summary-item">
+                    <h2>Income</h2>
+                    <div class="summary-value">${Income}</div>
+                </div>
+                <div class="summary-item">
+                    <h2>Expenses</h2>
+                    <div class="summary-value">${Expenses}</div>
+                </div>
+                <div class="summary-item">
+                    <h2>Balance</h2>
+                    <div class="summary-value">${Balance}</div>
+                </div>
+            </div>
+    </div>
+
+    <div ws-template="StockPortfolio" class="portfolio-container">
+        <h1>Investment Portfolio</h1>
+
+        <div class="portfolio-summary">
+            <div class="valuetext">Total Portfolio Value:</div>
+            <div class="finalamount">${portfolioValue}</div>
+            <div style="color: ${colorPL}" class="organized-pnl">Unrealized PnL : ${portfolioPandL} (${portfolioPercent}%)</div>
+        </div>
+
+        <div class="investment-addition">
+            <div class="input-section">
+                <div class="label">Asset Name</div>
+                <input ws-var="assetName" class="input-field" type="text">
+            </div>
+            <div class="input-section">
+                <div class="label">Quantity</div>
+                <input ws-var="assetQuantity" class="input-field" type="number">
+            </div>
+            <div class="input-section">
+                <div class="label">Purchase Price</div>
+                <input ws-var="assetPrice" class="input-field" type="number">
+            </div>
+            <button ws-onclick="add" class="btn-add">Add Asset</button>
+        </div>
+        <div ws-replace="Graph"></div>
+        <div class="portfolio-card-container" ws-hole="portfolioTableBody" ws-children-template="assetList">
+            <div class="portfolio-card">
+                <div class="card-header">
+                    <div class="asset-name">${assetName}</div>
+                    <button ws-onclick="remove" class="btn-remove">Remove</button>
+                </div>
+                <div class="card-body">
+                    <div class="card-row">
+                        <div class="label">Quantity:</div>
+                        <div class="value">${assetQuantity}</div>
+                    </div>
+                    <div class="card-row">
+                        <div class="label">Purchase Price:</div>
+                        <div class="value">${assetPrice}</div>
+                    </div>
+                    <div class="card-row">
+                        <div class="label">Current Price:</div>
+                        <div class="value">${assetCurrentPrice}</div>
+                    </div>
+                    <div class="card-row">
+                        <div class="label">Profit/Loss:</div>
+                        <div class="value" style="color: ${color}">${assetPandL}</div>
+                    </div>
+                    <div class="card-row">
+                        <div class="label">Amount Owned:</div>
+                        <div class="value" style="color: rgb(0, 210, 0)">${assetCostBasis}</div>
+                    </div>
+                    <div class="card-row">
+                        <div class="label">ASSET Value:</div>
+                        <div class="value">${MarketValue}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="Content/Stockportfolio.js"></script>
+</body>
+</html>
