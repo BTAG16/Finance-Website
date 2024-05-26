@@ -1,0 +1,25 @@
+2024-05-26 10:30:51.8101|DEBUG|Program|location of wsfscservice is: C:\Users\beheerder\.nuget\packages\websharper.fsharp\7.0.6.454-beta5\tools\net6.0\win-x64 (server side)
+2024-05-26 10:30:51.8101|DEBUG|Program|pipename is: C:\Users\beheerder\.nuget\packages\websharper.fsharp\7.0.6.454-beta5\tools\net6.0\win-x64 (server side)
+2024-05-26 10:30:51.8101|DEBUG|Program|Compiling C:\Users\beheerder\Documents\Programming I Projects\Stockportfolio\Stockportfolio.fsproj
+2024-05-26 10:31:36.3228|TRACE|Program|Server sends: n: F# compilation: 00:00:44.5649153
+2024-05-26 10:31:37.9571|TRACE|Program|Server sends: n: Checking project: 00:00:01.6355125
+2024-05-26 10:31:37.9571|TRACE|Program|Server sends: n: Waiting on merged metadata: 00:00:00.0014796
+2024-05-26 10:31:38.1125|TRACE|Program|Server sends: n: Parsing with FCS: 00:00:00.1539780
+2024-05-26 10:31:38.1125|TRACE|Program|Server sends: n: Analyzing function arguments: 00:00:00.0024983
+2024-05-26 10:31:38.1254|TRACE|Program|Server sends: n: Resolving names: 00:00:00.0103847
+2024-05-26 10:31:38.2467|TRACE|Program|Server sends: n: WebSharper translation: 00:00:00.1213282
+2024-05-26 10:31:38.2550|TRACE|Program|Server sends: n: Source position transformations: 00:00:00.0082715
+2024-05-26 10:31:38.2550|TRACE|Program|Server sends: n: Packaging assembly: 00:00:00.0068154
+2024-05-26 10:31:40.8961|TRACE|Program|Server sends: n: Writing Stockportfolio.Pages.Cash.js: 00:00:02.6343061
+2024-05-26 10:31:40.8961|TRACE|Program|Server sends: n: Writing Stockportfolio.Pages.Stock.Equity.js: 00:00:00.0023273
+2024-05-26 10:31:40.8961|TRACE|Program|Server sends: n: Writing Stockportfolio.Pages.Stock.js: 00:00:00.0018641
+2024-05-26 10:31:40.8961|TRACE|Program|Server sends: n: Writing Stockportfolio.Client.js: 00:00:00.0019970
+2024-05-26 10:31:40.9043|TRACE|Program|Server sends: n: Writing $StartupCode_Client.js: 00:00:00.0019539
+2024-05-26 10:31:40.9043|TRACE|Program|Server sends: n: Writing $Generated.js: 00:00:00.0030601
+2024-05-26 10:31:40.9043|TRACE|Program|Server sends: n: Writing $EntryPoint.js: 00:00:00.0016930
+2024-05-26 10:31:40.9043|TRACE|Program|Server sends: n: Writing .d.ts files: 00:00:00.0097461
+2024-05-26 10:31:40.9222|TRACE|Program|Server sends: n: Hashing resources: 00:00:00.0033772
+2024-05-26 10:31:41.5542|TRACE|Program|Server sends: n: Serializing metadata: 00:00:00.6320319
+2024-05-26 10:31:41.5957|TRACE|Program|Server sends: n: Writing resources into assembly: 00:00:00.0415388
+2024-05-26 10:31:42.1494|TRACE|Program|Server sends: n: Bundling: 00:00:00.5536254
+2024-05-26 10:31:42.1823|TRACE|Program|Server sends: x: 0

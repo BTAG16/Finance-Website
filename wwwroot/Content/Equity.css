@@ -1,0 +1,272 @@
+﻿/* Header styling */
+.header {
+    background-color: #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+            nav ul li a:hover {
+                background-color: #0056b3;
+                transform: scale(1.1);
+            }
+
+            nav ul li a.active {
+                background-color: #0056b3;
+                color: #fff;
+                font-weight: bold;
+            }
+
+
+/*Cash Flow*/
+
+.moneyTracking {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+    .moneyTracking header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+        .moneyTracking header h1 {
+            font-size: 2em;
+            color: #333;
+        }
+
+.add-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+    .add-section h2 {
+        font-size: 1.5em;
+        color: #555;
+    }
+
+.add-income, .add-expense {
+    width: 48%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .input-group input,
+    .input-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 1em;
+    }
+
+.add-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .add-button:hover {
+        background-color: #0056b3;
+    }
+
+.summary-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-item {
+    width: 32%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+    .summary-item h2 {
+        font-size: 1.5em;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+.summary-value {
+    font-size: 1.8em;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+/* Stock Portfolio */
+
+.portfolio-container {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.portfolio-summary {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.valuetext {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.finalamount {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.organized-pnl {
+    font-size: 1.2em;
+}
+
+.investment-addition {
+    margin-bottom: 20px;
+}
+
+.input-section {
+    margin-bottom: 10px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-add {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .btn-add:hover {
+        background-color: #45a049;
+    }
+
+.portfolio-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.portfolio-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    flex: 1 1 200px;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.asset-name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.btn-remove {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .btn-remove:hover {
+        background-color: #e53935;
+    }
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.value {
+    text-align: right;
+}

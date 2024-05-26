@@ -228,85 +228,6 @@ function totalE(){
 function totalG(){
   return _c.totalG;
 }
-function saver(stock){
-  const data=JSON.stringify(((EncodeList(Id()))())(stock));
-  globalThis.localStorage.setItem("stocks", data);
-}
-function loader(){
-  const m=globalThis.localStorage.getItem("stocks");
-  if(m==null)return EquityData();
-  else try {
-    return map((st) => New(st.Name, st.Amount, st.Price, shufflePrice(st.Price)), ((DecodeList(Id()))())(JSON.parse(m)));
-  }
-  catch(m_1){
-    return EquityData();
-  }
-}
-function StockFlowPage(){
-  LatestInfo();
-  const p=(st) => st.LatestPrice*st.Amount;
-  const portfolio=Map((s) => sumBy(p, s), EquityModel().v);
-  const p_1=(i_1) => i_1.LatestPrice*i_1.Amount-i_1.Price*i_1.Amount;
-  const totalProfitAndLoss=Map((s) => sumBy(p_1, s), EquityModel().v);
-  const c=Map((profitAndLoss) => profitAndLoss>=0?"rgb(0, 255, 0)":"red", totalProfitAndLoss);
-  const p_2=Map2((_2, _3) =>(_3*100/_2).toFixed(2), portfolio, totalProfitAndLoss);
-  const p_3=Map((_2) => _2.toFixed(2)+"$", totalProfitAndLoss);
-  const p_4=Map((_2) => _2.toFixed(2)+"$", portfolio);
-  const p_5=_c_16.Convert((stock) => {
-    const marketFloor=stock.Amount*stock.Price;
-    const assetValue=stock.LatestPrice*stock.Amount;
-    const p_7=[marketFloor, assetValue, assetValue-marketFloor, (value) => value.toFixed(2)];
-    const profitAndLoss=p_7[2];
-    const print=p_7[3];
-    const M=print(p_7[1]);
-    const a=print(p_7[0]);
-    const a_1=print(profitAndLoss);
-    const a_2=print(stock.LatestPrice);
-    const a_3=print(stock.Price);
-    const a_4=print(stock.Amount);
-    const this_9=new _c_8("New_1");
-    const this_10=(this_9.h.push(new _c_15("assetname", stock.Name)),this_9);
-    const this_11=(this_10.h.push(new _c_15("assetquantity", a_4)),this_10);
-    const this_12=(this_11.h.push(new _c_15("assetprice", a_3)),this_11);
-    const this_13=(this_12.h.push(new _c_15("assetcurrentprice", a_2)),this_12);
-    const this_14=(this_13.h.push(new _c_15("color", profitAndLoss>=0?"rgb(0, 255, 0)":"red")),this_13);
-    const this_15=(this_14.h.push(new _c_15("assetpandl", a_1)),this_14);
-    const this_16=(this_15.h.push(new _c_15("assetcostbasis", a)),this_15);
-    const t_1=(this_16.h.push(new _c_15("marketvalue", M)),this_16);
-    const b_1=(t_1.h.push(EventQ2(t_1.k, "remove", () => t_1.i, () => {
-      EquityModel().RemoveByKey(stock.Name);
-    })),t_1);
-    const p_8=CompleteHoles(b_1.k, b_1.h, []);
-    const i_1=new _c_13(p_8[1], assetlist(p_8[0]));
-    let _2=(b_1.i=i_1,i_1);
-    return _2.Doc;
-  }, EquityModel().v);
-  const this_1=new _c_8("New_1");
-  const this_2=(this_1.h.push(new _c_14("portfoliotablebody", p_5)),this_1);
-  const this_3=(this_2.h.push(new _c_20("assetname", stockN())),this_2);
-  const this_4=(this_3.h.push(new _c_19("assetquantity", stockA())),this_3);
-  const this_5=(this_4.h.push(new _c_19("assetprice", stockP())),this_4);
-  const this_6=(this_5.h.push(new _c_18("portfoliovalue", p_4)),this_5);
-  const this_7=(this_6.h.push(new _c_18("portfoliopandl", p_3)),this_6);
-  const this_8=(this_7.h.push(new _c_18("portfoliopercent", p_2)),this_7);
-  const t=(this_8.h.push(new _c_18("colorpl", c)),this_8);
-  const b=(t.h.push(EventQ2(t.k, "add", () => t.i, () => {
-    const stockN_1=stockN();
-    const stockA_1=stockA();
-    const stockP_1=stockP();
-    if(!IsNullOrWhiteSpace(stockN_1.Get())&&stockA_1.Get()>0&&stockP_1.Get()>0){
-      const newStock=New(capital(stockN_1.Get()), stockA_1.Get(), stockP_1.Get(), shufflePrice(stockP_1.Get()));
-      EquityModel().Append(newStock);
-      stockN_1.Set("");
-      stockA_1.Set(0);
-      stockP_1.Set(0);
-    }
-  })),t);
-  const p_6=CompleteHoles(b.k, b.h, [["assetname", 0, null], ["assetquantity", 1, null], ["assetprice", 1, null]]);
-  const i=new _c_13(p_6[1], stockportfolio(p_6[0]));
-  let _1=(b.i=i,i);
-  return _1.Doc;
-}
 function CashFlowPage(){
   const this_1=new _c_8("New_1");
   const this_2=(this_1.h.push(new _c_20("incomegroup", incomegroup())),this_1);
@@ -326,35 +247,6 @@ function CashFlowPage(){
   const i=new _c_13(p[1], moneytracking(p[0]));
   let _1=(b.i=i,i);
   return _1.Doc;
-}
-function EquityData(){
-  return _c.EquityData;
-}
-function shufflePrice(price){
-  return price*(1+((random(),Math.random())-0.5)*0.2);
-}
-function LatestInfo(){
-  const _1=null;
-  Start(Delay(() => While(() => true, Delay(() => Bind_1(Sleep(5000), () => {
-    priceupdate();
-    return Zero();
-  })))), null);
-}
-function EquityModel(){
-  return _c.EquityModel;
-}
-function stockP(){
-  return _c.stockP;
-}
-function stockA(){
-  return _c.stockA;
-}
-function stockN(){
-  return _c.stockN;
-}
-function capital(str){
-  let c;
-  return IsNullOrWhiteSpace(str)?str:(c=str[0],String(c)).toUpperCase()+str.substring(1).toLowerCase();
 }
 function balanceView(){
   return _c.balanceView;
@@ -398,15 +290,6 @@ function addExpenses(){
   totalE().Set(p[2]);
   expensegroup().Set("");
   loss().Set(0);
-}
-function random(){
-  return _c.random;
-}
-function priceupdate(){
-  EquityModel().Iter((eq) => {
-    const newLastPrice=shufflePrice(eq.Price);
-    EquityModel().UpdateBy((s) => s.Name==eq.Name?Some(New(s.Name, s.Amount, s.Price, newLastPrice)):null, eq.Name);
-  });
 }
 function storage_i(){
   return _c.storage_i;
@@ -494,6 +377,123 @@ function KeyValue(kvp){
 function range(min, max_1){
   const count=1+max_1-min;
   return count<=0?[]:init_1(count, (x) => x+min);
+}
+function saver(stock){
+  const data=JSON.stringify(((EncodeList(Id()))())(stock));
+  globalThis.localStorage.setItem("stocks", data);
+}
+function loader(){
+  const m=globalThis.localStorage.getItem("stocks");
+  if(m==null)return EquityData();
+  else try {
+    return map((st) => New(st.Name, st.Amount, st.Price, shufflePrice(st.Price)), ((DecodeList(Id()))())(JSON.parse(m)));
+  }
+  catch(m_1){
+    return EquityData();
+  }
+}
+function StockFlowPage(){
+  LatestInfo();
+  const p=(st) => st.LatestPrice*st.Amount;
+  const portfolio=Map((s) => sumBy(p, s), EquityModel().v);
+  const p_1=(i_1) => i_1.LatestPrice*i_1.Amount-i_1.Price*i_1.Amount;
+  const totalProfitAndLoss=Map((s) => sumBy(p_1, s), EquityModel().v);
+  const c=Map((profitAndLoss) => profitAndLoss>=0?"rgb(0, 255, 0)":"red", totalProfitAndLoss);
+  const p_2=Map2((_2, _3) =>(_3*100/_2).toFixed(2), portfolio, totalProfitAndLoss);
+  const p_3=Map((_2) => _2.toFixed(2)+"$", totalProfitAndLoss);
+  const p_4=Map((_2) => _2.toFixed(2)+"$", portfolio);
+  const p_5=_c_16.Convert((stock) => {
+    const marketFloor=stock.Amount*stock.Price;
+    const assetValue=stock.LatestPrice*stock.Amount;
+    const p_7=[marketFloor, assetValue, assetValue-marketFloor, (value) => value.toFixed(2)];
+    const profitAndLoss=p_7[2];
+    const print=p_7[3];
+    const M=print(p_7[1]);
+    const a=print(p_7[0]);
+    const a_1=print(profitAndLoss);
+    const a_2=print(stock.LatestPrice);
+    const a_3=print(stock.Price);
+    const a_4=print(stock.Amount);
+    const this_9=new _c_8("New_1");
+    const this_10=(this_9.h.push(new _c_15("assetname", stock.Name)),this_9);
+    const this_11=(this_10.h.push(new _c_15("assetquantity", a_4)),this_10);
+    const this_12=(this_11.h.push(new _c_15("assetprice", a_3)),this_11);
+    const this_13=(this_12.h.push(new _c_15("assetcurrentprice", a_2)),this_12);
+    const this_14=(this_13.h.push(new _c_15("color", profitAndLoss>=0?"rgb(0, 255, 0)":"red")),this_13);
+    const this_15=(this_14.h.push(new _c_15("assetpandl", a_1)),this_14);
+    const this_16=(this_15.h.push(new _c_15("assetcostbasis", a)),this_15);
+    const t_1=(this_16.h.push(new _c_15("marketvalue", M)),this_16);
+    const b_1=(t_1.h.push(EventQ2(t_1.k, "remove", () => t_1.i, () => {
+      EquityModel().RemoveByKey(stock.Name);
+    })),t_1);
+    const p_8=CompleteHoles(b_1.k, b_1.h, []);
+    const i_1=new _c_13(p_8[1], assetlist(p_8[0]));
+    let _2=(b_1.i=i_1,i_1);
+    return _2.Doc;
+  }, EquityModel().v);
+  const this_1=new _c_8("New_1");
+  const this_2=(this_1.h.push(new _c_14("portfoliotablebody", p_5)),this_1);
+  const this_3=(this_2.h.push(new _c_20("assetname", stockN())),this_2);
+  const this_4=(this_3.h.push(new _c_19("assetquantity", stockA())),this_3);
+  const this_5=(this_4.h.push(new _c_19("assetprice", stockP())),this_4);
+  const this_6=(this_5.h.push(new _c_18("portfoliovalue", p_4)),this_5);
+  const this_7=(this_6.h.push(new _c_18("portfoliopandl", p_3)),this_6);
+  const this_8=(this_7.h.push(new _c_18("portfoliopercent", p_2)),this_7);
+  const t=(this_8.h.push(new _c_18("colorpl", c)),this_8);
+  const b=(t.h.push(EventQ2(t.k, "add", () => t.i, () => {
+    const stockN_1=stockN();
+    const stockA_1=stockA();
+    const stockP_1=stockP();
+    if(!IsNullOrWhiteSpace(stockN_1.Get())&&stockA_1.Get()>0&&stockP_1.Get()>0){
+      const newStock=New(capital(stockN_1.Get()), stockA_1.Get(), stockP_1.Get(), shufflePrice(stockP_1.Get()));
+      EquityModel().Append(newStock);
+      stockN_1.Set("");
+      stockA_1.Set(0);
+      stockP_1.Set(0);
+    }
+  })),t);
+  const p_6=CompleteHoles(b.k, b.h, [["assetname", 0, null], ["assetquantity", 1, null], ["assetprice", 1, null]]);
+  const i=new _c_13(p_6[1], stockportfolio(p_6[0]));
+  let _1=(b.i=i,i);
+  return _1.Doc;
+}
+function EquityData(){
+  return _c.EquityData;
+}
+function shufflePrice(price){
+  return price*(1+((random(),Math.random())-0.5)*0.2);
+}
+function LatestInfo(){
+  const _1=null;
+  Start(Delay(() => While(() => true, Delay(() => Bind_1(Sleep(5000), () => {
+    priceupdate();
+    return Zero();
+  })))), null);
+}
+function EquityModel(){
+  return _c.EquityModel;
+}
+function stockP(){
+  return _c.stockP;
+}
+function stockA(){
+  return _c.stockA;
+}
+function stockN(){
+  return _c.stockN;
+}
+function capital(str){
+  let c;
+  return IsNullOrWhiteSpace(str)?str:(c=str[0],String(c)).toUpperCase()+str.substring(1).toLowerCase();
+}
+function random(){
+  return _c.random;
+}
+function priceupdate(){
+  EquityModel().Iter((eq) => {
+    const newLastPrice=shufflePrice(eq.Price);
+    EquityModel().UpdateBy((s) => s.Name==eq.Name?Some(New(s.Name, s.Amount, s.Price, newLastPrice)):null, eq.Name);
+  });
 }
 function Create(key, init_3){
   return CreateWithStorage(key, InMemory(ofSeq_1(init_3)));
