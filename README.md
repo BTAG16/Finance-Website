@@ -1,7 +1,4 @@
 # Finance-Website
-```markdown
-# Finance-Website
-# Account Manager
 
 ## Overview
 
