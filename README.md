@@ -40,7 +40,7 @@ _Screenshot images will be added here._
 
 ## Live Demo
 
-_A live link to the application will be provided here._
+- You can preview the Website [here](https://finances.azurewebsites.net/)
 
 ## License
 
