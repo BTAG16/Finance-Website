@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Account Manager is a web application designed to help you manage your finances by tracking your income, expenses, and investment portfolio. It is built using WebSharper, a web development framework for F#.
+The Finance Website is a web application designed to help you manage your finances by tracking your income, expenses, and investment portfolio. It is built using WebSharper, a web development framework for F#.
 
 ## Live Demo
 
