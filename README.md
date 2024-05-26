@@ -4,6 +4,10 @@
 
 The Account Manager is a web application designed to help you manage your finances by tracking your income, expenses, and investment portfolio. It is built using WebSharper, a web development framework for F#.
 
+## Live Demo
+
+- You can preview the Website [here](https://finances.azurewebsites.net/)
+
 ## Features
 
 - **Cash Flow Management**: Track various sources of income and categories of expenses. The application provides a summary of total income, total expenses, and the resulting balance.
@@ -40,10 +44,6 @@ The Account Manager is a web application designed to help you manage your financ
 - ![Screenshot 2024-05-26 110728](https://github.com/BTAG16/Finance-Website/assets/128963075/fbbf94e7-8735-4746-ab74-22d83e706882)
 - ![Screenshot 2024-05-26 110751](https://github.com/BTAG16/Finance-Website/assets/128963075/9a5907bb-5796-41a1-8ef0-dfab06be1a14)
 - ![Screenshot 2024-05-26 110744](https://github.com/BTAG16/Finance-Website/assets/128963075/f1d86bb2-3e87-4ad3-b97f-9e0530149e21)
-
-## Live Demo
-
-- You can preview the Website [here](https://finances.azurewebsites.net/)
 
 ## License
 
