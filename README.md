@@ -35,11 +35,11 @@ The Account Manager is a web application designed to help you manage your financ
 3. **Remove Asset**: Click the "Remove" button to delete an asset from your portfolio.
 
 ## Screenshots
-
-- <iframe width="560" height="315" src="https://www.youtube.com/embed/HVwBWkvhvCc" frameborder="0" allowfullscreen></iframe>
-
-
-_Screenshot images will be added here._
+- ![Screenshot 2024-05-26 110655](https://github.com/BTAG16/Finance-Website/assets/128963075/a7f4920d-546e-4628-8b23-e6189a7f8802)
+- ![Screenshot 2024-05-26 110717](https://github.com/BTAG16/Finance-Website/assets/128963075/fe91f343-9bc3-417a-a8f3-124aab779957)
+- ![Screenshot 2024-05-26 110728](https://github.com/BTAG16/Finance-Website/assets/128963075/fbbf94e7-8735-4746-ab74-22d83e706882)
+- ![Screenshot 2024-05-26 110751](https://github.com/BTAG16/Finance-Website/assets/128963075/9a5907bb-5796-41a1-8ef0-dfab06be1a14)
+- ![Screenshot 2024-05-26 110744](https://github.com/BTAG16/Finance-Website/assets/128963075/f1d86bb2-3e87-4ad3-b97f-9e0530149e21)
 
 ## Live Demo
 
@@ -84,7 +84,7 @@ This project is licensed under the MIT License.
 
 - **Content/**: Contains CSS and JavaScript files.
 - **wwwroot/**: Contains static assets and the HTML templates.
-- **Program.fs**: The main F# file that defines the application endpoints and logic.
+- **Client.fs**: The main F# file that defines the application endpoints and logic.
 - **\*.fsproj**: The project file defining dependencies and build configurations.
 
 ## Development
@@ -114,14 +114,10 @@ To contribute to this project, please fork the repository and create a pull requ
 
 5. **Create a Pull Request**
 
-### Contributors
-
-Thank you to all the contributors who have helped in the development of this project.
-
 ## Contact
 
-For more information, visit the documentation or contact the project maintainers at email@example.com.
+For more information, visit the documentation or contact the project maintainers at [WebSharper](https://websharper.com/)
 
 ## Author
 
-Cosmos Junior Ighoraye
+[Cosmos Junior Ighoraye](https://github.com/BTAG16)
